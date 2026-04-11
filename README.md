@@ -57,12 +57,7 @@ TEACHING SCHEDULE: Subject to change-- stay tuned
 | Week 4: May 26/28|  |
 | Week 5: June 2/4 |  |
 
-Lecture recording and reading schedule:
-Week 1: May 5/7 Textbook chapters 1,3,7,8
-Week 2: May 12/14 Textbook chapters 9,2,4
-Week 3: May 19/21 Textbook chapters 5,10,12
-Week 4: May 26/28
-Week 5: June 2/4
+
 
 | Week Number | During Lab Schedule |
 | -------- | -------- |
@@ -72,13 +67,6 @@ Week 5: June 2/4
 | Week 4: May 26/28| Performing GWAS and Calculating Polygenic Risk Scores |
 | Week 5: June 2/4 | Heritability and Fst |
 
-
-In class lab schedule:
-Week 1: May 5/7 Intrduction to unix scripting and R studio, problem set 1 - Allelic and genotypic frequencies with application to SNP array data
-Week 2: May 12/14 Problem set 2 - Identifying population structure from genomic data
-Week 3: May 19/21 Problem set 3 - IBD and Runs of Homozygosity (ROH)
-Week 4: May 26/28 Problem set 4 - Performing GWAS and Calculating Polygenic Risk Scores
-Week 5: June 2/4 Problem set 5 - Heritability and Fst
 
 
 
