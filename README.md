@@ -16,12 +16,12 @@ Course Duration: May 5th – June 4th
 
 Office Hours: TBD
 
-E-mail: abrenner@ucdavis.edu ** Please include “D43” in the subject Line of the e-mail
+E-mail: abrenner@ucdavis.edu ** Please include “D43” in the subject Line of the e-mail**
 
 COURSE DESCRIPTION:
 
-This is an online course that emphasizes population genetic theory as integrated into a practical hands-on computational experience. Students will build on a theory-based lecture to gain a detailed understanding of population genetics by extensive data analysis. The focus of the lab component is on human genetic/genomic example datasets.
-Each week, you will watch 2 provided lecture recordings given by Gillian Meeks who is currentl
+This is an online course that emphasizes population genetic theory as integrated into a practical, hands-on computational experience. Students will build on a theory-based lecture to gain a detailed understanding of population genetics through extensive data analysis. The focus of the lab component is on human genetic/genomic example datasets.
+Each week, you will watch 2 provided lecture recordings given by Gillian Meeks, who is concurrently teaching this course at UC Davis.
 
 Course Objectives:
 
@@ -46,12 +46,20 @@ Population Genetic Concepts:
 Hardy-Weinberg equilibrium, population structure, Fst, admixture, ancestry, populations, effective population size, haplotypes, linkage disequilbrium, identity by descent vs state, mutation rate, genetic drift, migration rates, heritability, inbreeding, neutral theory, positive and negative selection, complex traits, GWAS, ascertainment bias, polygenic scores
 
 TEACHING SCHEDULE: Subject to change-- stay tuned
-Week 1: May 5/7
-Week 2: May 12/14
-Week 3: May 19/21
+
+Lecture recording and reading schedule:
+Week 1: May 5/7 Textbook chapters 1,3,7,8
+Week 2: May 12/14 Textbook chapters 9,2,4
+Week 3: May 19/21 Textbook chapters 5,10,12
 Week 4: May 26/28
 Week 5: June 2/4
 
+In class lab schedule:
+Week 1: May 5/7 Intrduction to unix scripting and R studio, problem set 1 - Allelic and genotypic frequencies with application to SNP array data
+Week 2: May 12/14 Problem set 2 - Identifying population structure from genomic data
+Week 3: May 19/21 Problem set 3 - IBD and Runs of Homozygosity (ROH)
+Week 4: May 26/28 Problem set 4 - Performing GWAS and Calculating Polygenic Risk Scores
+Week 5: June 2/4 Problem set 5 - Heritability and Fst
 
 
 
@@ -65,5 +73,4 @@ Specific textbook pages for reference will be given for relevant problem sets. P
 
 Assignments and Tests:
 
-Five homework assignments based on class lecture and the textbook will be assigned.
-OPTIONAL/TBD: A group project or independent project will be due on the last week. Each group/person will be offered access to a genomic dataset. In consultation with the instructor, they will design a research question pertaining to quantitative trait architecture or demographic inference. Students will work collaboratively to implement different analyses and interpret their results. A short written project report will be handed in with annotated student contributions.
+Five homework assignments based on the course recorded lectures and the textbook will be assigned. These will be due Monday Morning of the next week.
