@@ -74,3 +74,9 @@ Specific textbook pages for reference will be given for relevant problem sets. P
 Assignments and Tests:
 
 Five homework assignments based on the course recorded lectures and the textbook will be assigned. These will be due Monday Morning of the next week.
+
+
+| Header 1 | Header 2 |
+| -------- | -------- |
+| Row 1, Col 1 | Row 1, Col 2 |
+| Row 2, Col 1 | Row 2, Col 2 |
