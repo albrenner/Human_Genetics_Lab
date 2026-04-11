@@ -47,12 +47,31 @@ Hardy-Weinberg equilibrium, population structure, Fst, admixture, ancestry, popu
 
 TEACHING SCHEDULE: Subject to change-- stay tuned
 
+
+
+| Week Number | Lecture to watch before/Textbook chapters to read before |
+| -------- | -------- |
+| Week 1: May 5/7 | Textbook chapters 1,3,7,8 |
+| Week 2: May 12/14 | Textbook chapters 9,2,4 |
+| Week 3: May 19/21 | Textbook chapters 5,10,12 |
+| Week 4: May 26/28|  |
+| Week 5: June 2/4 |  |
+
 Lecture recording and reading schedule:
 Week 1: May 5/7 Textbook chapters 1,3,7,8
 Week 2: May 12/14 Textbook chapters 9,2,4
 Week 3: May 19/21 Textbook chapters 5,10,12
 Week 4: May 26/28
 Week 5: June 2/4
+
+| Week Number | During Lab Schedule |
+| -------- | -------- |
+| Week 1: May 5/7 | Introduction to unix scripting and R studio, problem set 1 - Allelic and genotypic frequencies with application to SNP array data |
+| Week 2: May 12/14 | Identifying population structure from genomic data |
+| Week 3: May 19/21 | IBD and Runs of Homozygosity (ROH) |
+| Week 4: May 26/28| Performing GWAS and Calculating Polygenic Risk Scores |
+| Week 5: June 2/4 | Heritability and Fst |
+
 
 In class lab schedule:
 Week 1: May 5/7 Intrduction to unix scripting and R studio, problem set 1 - Allelic and genotypic frequencies with application to SNP array data
@@ -74,9 +93,3 @@ Specific textbook pages for reference will be given for relevant problem sets. P
 Assignments and Tests:
 
 Five homework assignments based on the course recorded lectures and the textbook will be assigned. These will be due Monday Morning of the next week.
-
-
-| Header 1 | Header 2 |
-| -------- | -------- |
-| Row 1, Col 1 | Row 1, Col 2 |
-| Row 2, Col 1 | Row 2, Col 2 |
