@@ -22,7 +22,7 @@ This is the course page for the human genetics lab course. Here you will find th
 **Course Description:**  
 
 This is an online course that emphasizes population genetic theory as integrated into a practical, hands-on computational experience. Students will build on a theory-based lecture to gain a detailed understanding of population genetics through extensive data analysis. The focus of the lab component is on human genetic/genomic example datasets.
-Each week, you will watch 2 provided lecture recordings given by Gillian Meeks, who is concurrently teaching this course at UC Davis.
+Each week, you will watch 2 provided lecture recordings given by Gillian Meeks, who is concurrently teaching this course at UC Davis, and me.
 
 
 **Course Objectives:**
@@ -46,13 +46,13 @@ Critically interpret claims of genetic prediction, genetic heritability, and nat
 
 **Population Genetic Concepts:**
 
-Hardy-Weinberg equilibrium, population structure, Fst, admixture, ancestry, populations, effective population size, haplotypes, linkage disequilbrium, identity by descent vs state, mutation rate, genetic drift, migration rates, heritability, inbreeding, neutral theory, positive and negative selection, complex traits, GWAS, ascertainment bias, polygenic scores
+Hardy-Weinberg equilibrium, population structure, Fst, admixture, ancestry, populations, effective population size, haplotypes, linkage disequilibrium, identity by descent vs state, mutation rate, genetic drift, migration rates, heritability, inbreeding, neutral theory, positive and negative selection, complex traits, GWAS, ascertainment bias, polygenic scores
 
 
 **Course Material and Required Reading:**
 
 Required - An Introduction to Statistical Genetic Data Analysis, by Melinda C. Mills, Nicola Barban, Felix C. Tropf, 2020 MIT Press
-Readings from the primary literature may be assigned. If included, journal articles will be made freely available via pdf to all students.
+Readings from the primary literature may be assigned. If included, journal articles will be made freely available via PDF to all students.
 
 The textbook chapters are available as PDFs in this GitHub repository 
 
@@ -75,7 +75,7 @@ Five homework assignments based on the course recorded lectures and the textbook
 
 | Week Number | During Lab Schedule |
 | -------- | -------- |
-| Week 1: May 5/7 | Introduction to unix scripting and R studio, problem set 1 - Allelic and genotypic frequencies with application to SNP array data |
+| Week 1: May 5/7 | Introduction to Unix scripting and R Studio, problem set 1 - Allelic and genotypic frequencies with application to SNP array data |
 | Week 2: May 12/14 | Problem set 2 - Identifying population structure from genomic data |
 | Week 3: May 19/21 | Problem set 3 - IBD and Runs of Homozygosity (ROH) |
 | Week 4: May 26/28| Problem set 4 - Performing GWAS and Calculating Polygenic Risk Scores |
