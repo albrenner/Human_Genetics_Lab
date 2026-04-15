@@ -15,7 +15,7 @@ Name:
 Write your name here
 ```
 
-**Due Date: Friday April 17, 11:59pm**
+**Due Date:**
 
 ### Goals:
 
