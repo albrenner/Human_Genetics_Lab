@@ -62,33 +62,8 @@ The textbook chapters are available as PDFs in this GitHub repository
 Five homework assignments based on the course recorded lectures and the textbook will be assigned. These will be due Monday Morning of the next week.
 
 
-**Teaching and Reading Schedule:** Subject to change-- stay tuned
 
-| Week Number | Lecture to watch before the week/Textbook chapters to read before the week|  |
-| -------- | -------- |-------- | 
-| Week 1: May 5/7 | Week1_Intro_Human_Genetics_tech_basic_terms and Week 2_HWE_heterozygosity_plink-3........Textbook chapters 1,3,7,8 | |
-| Week 2: May 12/14 | Visualizing_Genetic_Diversity and ........Textbook chapters 9,2,4 |  https://ucdavis.zoom.us/rec/share/xV9tXWRJXcnKnIIF3jN5fFabwm78KuBjrppUwVU3f7zy645bWccsjL_lm_megEsJ.wnVoy33ubpPwX8aP|
-| Week 3: May 19/21 | Textbook chapters 5,10,12 | |
-| Week 4: May 26/28|  | |
-| Week 5: June 2/4 |  |
-
-
-| Week Number | During Lab Schedule |
-| -------- | -------- |
-| Week 1: May 5/7 | Introduction to Unix scripting and R Studio, problem set 1 - Allelic and genotypic frequencies with application to SNP array data |
-| Week 2: May 12/14 | Problem set 2 - Identifying population structure from genomic data |
-| Week 3: May 19/21 | Problem set 3 - IBD and Runs of Homozygosity (ROH) |
-| Week 4: May 26/28| Problem set 4 - Performing GWAS and Calculating Polygenic Risk Scores |
-| Week 5: June 2/4 | Problem set 5 - Heritability and Fst |
-
-
-
-
-
-
-
-
-
+**Schedule:**
 
 | Week | Tuesday | Thursday |
 |------|---------|----------|
