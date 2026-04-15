@@ -64,12 +64,12 @@ Five homework assignments based on the course recorded lectures and the textbook
 
 **Teaching and Reading Schedule:** Subject to change-- stay tuned
 
-| Week Number | Lecture to watch before the week/Textbook chapters to read before the week|
-| -------- | -------- |
-| Week 1: May 5/7 | Week1_Intro_Human_Genetics_tech_basic_terms and Week 2_HWE_heterozygosity_plink-3........Textbook chapters 1,3,7,8 |
-| Week 2: May 12/14 | Week3_Visualizing_Genetic_Diversity and ........Textbook chapters 9,2,4 |
-| Week 3: May 19/21 | Textbook chapters 5,10,12 |
-| Week 4: May 26/28|  |
+| Week Number | Lecture to watch before the week/Textbook chapters to read before the week|  |
+| -------- | -------- |-------- | 
+| Week 1: May 5/7 | Week1_Intro_Human_Genetics_tech_basic_terms and Week 2_HWE_heterozygosity_plink-3........Textbook chapters 1,3,7,8 | |
+| Week 2: May 12/14 | Visualizing_Genetic_Diversity and ........Textbook chapters 9,2,4 |  https://ucdavis.zoom.us/rec/share/xV9tXWRJXcnKnIIF3jN5fFabwm78KuBjrppUwVU3f7zy645bWccsjL_lm_megEsJ.wnVoy33ubpPwX8aP|
+| Week 3: May 19/21 | Textbook chapters 5,10,12 | |
+| Week 4: May 26/28|  | |
 | Week 5: June 2/4 |  |
 
 
@@ -81,4 +81,20 @@ Five homework assignments based on the course recorded lectures and the textbook
 | Week 4: May 26/28| Problem set 4 - Performing GWAS and Calculating Polygenic Risk Scores |
 | Week 5: June 2/4 | Problem set 5 - Heritability and Fst |
 
+
+
+
+
+
+
+
+
+
+| Week | Tuesday | Thursday |
+|------|---------|----------|
+| **Week 1: <br> May 5/7** | **Read and watch before class:** Introduction to genetics lecture<br><br>**In Class:** Basic Unix tutorial, R Studio tutorial, Introduce problem set 1 | **Read and watch before class:** Plink and Hardy Weinberg lecture<br><br>**In Class:** Problem set 1 |
+| **Week 2: <br> May 12/14** | **Read and watch before class:** <br><br>**In Class:** Finish problem set 1 | **Read and watch before class:** Admixture and PCA lecture<br><br>**In Class:** Start Problem set 2 |
+| **Week 3: <br> May 19/21** | **Read and watch before class:** Visualizing admixture, inbreeding, and relatedness lecture<br><br>**In Class:** Problem set 2 | **Read and watch before class:** <br><br>**In Class:** Finish problem set 2, Start problem set 3 |
+| **Week 4: <br> May 26/28** | **Read and watch before class:** IBD, relatives, and ROH lecture<br><br>**In Class:** Problem set 3 | **Read and watch before class:**<br><br>**In Class:** Finish problem set 3 |
+| **Week 5: <br> June 2/4** | **Read and watch before class:** GWAS and LD lecture<br><br>**In Class:** Start problem set 4 | **Read and watch before class:** PRS and population stratification<br><br>**In Class:** Finish problem set 4 |
 
