@@ -22,7 +22,7 @@ This is the course page for the human genetics lab course. Here you will find th
 **Course Description:**  
 
 This is an online course that emphasizes population genetic theory as integrated into a practical, hands-on computational experience. Students will build on a theory-based lecture to gain a detailed understanding of population genetics through extensive data analysis. The focus of the lab component is on human genetic/genomic example datasets.
-Each week, you will watch the provided lecture recordings given by Gillian Meeks, who is concurrently teaching this course at UC Davis, Dr. Brenna henn, and me.
+Each week, you will watch the provided lecture recordings given by Gillian Meeks, who is concurrently teaching this course at UC Davis, Dr. Brenna Henn, and me.
 
 
 **Course Objectives:**
