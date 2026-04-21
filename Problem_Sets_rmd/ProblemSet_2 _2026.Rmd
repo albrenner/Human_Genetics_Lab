@@ -1,0 +1,391 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+## ANT157L Problem Set 2: Identifying population structure from genomic data
+
+
+Name:
+```
+Write your name here
+```
+
+**Due Date:  Friday May 1, 11:59pm**
+
+
+
+
+
+**REALLY IMPORTANT NEW STEP**
+Now that we are on hive you need to do this before you run any commands. Do this as soon as you sign in!!!!!!!!!!
+
+```
+srun --account=publicgrp --partition=low --mem=4G --time=2:00:00 --pty /bin/bash -il
+```
+
+
+
+
+### Goals:
+This exercise is meant to give you tools for visualizing population structure in genomic datasets. Additionally, you will test whether some individuals have recent admixture from different ancestries and whether individuals within a population are closely related to each other. Some of the work is in R. You will learn how to make your own ADMIXTURE and PCA graphics with the code provided
+
+## Task 1. Plot and Interpret PCA:
+
+Navigate to the ProblemSet2 directory and copy the Ethiopians_chr1_updated_sex.bed, .bim, and .fam files into your peronal student directory. These new files for this dataset are the same from last week but have the sex updated so all indivuals are labled.
+
+We will begin by loading plink to run a PCA.
+
+```         
+module load plink/1.90p
+```
+
+Now you need to get the Ethiopians_Chr1_updated_sex.bed, .bim and .fam files filtered and ready for the PCA analysis.
+
+>NOTE: you need to run the following command to produce a QCed set to use from this point onward:
+
+```
+plink --bfile Ethiopians_chr1_updated_sex --geno 0.02 --maf 0.05 --hwe 0.001 --make-bed --out Ethiopians_chr1_updated_sex_geno02_maf05_hwe001
+
+```
+
+You can run a PCA in plink by using the --pca command (see plink website and Ch. 9 of your book for more details). In this instance, we are using the plink command below to run the first 4 principal components on the Ethiopians_Chr1 dataset. Run this command on your own dataset.
+
+```
+plink --bfile Ethiopians_chr1_updated_sex_geno02_maf05_hwe001 --pca 4 --out EthiopianChr1_pcs4
+```
+
+## Question 1 [ pts]
+
+Look at the .eigenvec file. Describe the file contents. What is contained in the row and the columns? You may need to reference the textbook.
+
+```
+(Type your answer here)
+```
+
+Now we will plot the PCA. Open a new terminal window (you can do this with Command+T the same way you would open a new window on the internet). DON’T login. Instead use pwd to see where you are on your local computer; this is your current working directory. In order to move a file from a remote host to your local host (your computer) we can use the ```scp``` command. NOTE this is all in one command line. Fill in the login and file names with yours. Recall that “.” means your current working directory on your computer, just like you practiced in week 1 (you can change this if you want to download things elsewhere).
+
+```
+scp "loginName"@hive.hpc.ucdavis.edu:/quobyte/bmhenn-class-grp/students/abrenner/"YourStudentDirectoryName"/EthiopianChr1_pcs4.eigenvec .
+```
+
+Open R. In R console, set your working directory to where you downloaded the file.
+
+```
+setwd("[path_to_my_files]/")
+```
+Then we will install a package called ggplot to visualize the data
+> NOTE: You only need to do this if you don't already have the ggplot2 package. If you already have it, you can skip to the library() command
+
+```{r}
+install.packages("ggplot2")
+library(ggplot2)
+```
+
+Now we will read in the data to a table we call “data” and relabel the columns to be easier to read.
+
+```
+columns=c("population", "sampleID", "pc1", "pc2", "pc3", "pc4")
+data<- read.table("EthiopianChr1_PCs4.eigenvec", sep = "",  header=F, col.names=columns)
+ggplot(data, aes(x=pc1,y=pc2, color=population))+geom_point()+ xlab("PC1")+ ylab("PC2")
+
+```
+
+
+## Question 2 [4 pts]
+
+Add your plots of PC1 vs PC2, and PC3 vs PC4 below. This can be done by pasting your R plotting code in the section below that specifies eval=TRUE. The eval=TRUE specification will tell R to run the code (to generate the plot) when you knit the file, and the echo=TRUE will specify that your code will be shown in addition to being evaluated/run in the knitted file. However, You can run the code to visualize your plot before you knit the final file.
+> Note: Your evaluated code below will need to include your setwd("[path_to_files]/") and library(ggplot2) in order to evaluate 
+
+Generate your PCA plots in R below
+
+PC1 vs PC2
+```{r, eval=TRUE, echo=TRUE}
+
+
+```
+PC3 vs PC4
+```{r, eval=TRUE, echo=TRUE}
+
+
+```
+
+Do we observe population structure in this dataset? Explain. Which populations are most closely related to each other? Which are most distant?
+
+```
+(Type your answer here)
+```
+
+## Question 3 [2pts]
+
+Do you learn any additional information by looking at PC3 vs PC4 (as opposed to just the first two PCs?
+
+```
+(Type your answer here)
+```
+
+## Question 4 [2pts]
+
+Which command do you use to remove old files? How about removing multiple files at once?
+
+```
+(Type your answer here)
+```
+
+IMPORTANT STEP!!!!!!!!!!!!!!!!!!!!!!!!!!
+> Note: Do not miss this step below! It is important that you copy over this sorted dataset with all the chromsomes and use this for the next set of questions. If the fam file is not sorted, then pong (future step) will produce an admixture plot that is not grouped by population, and we don't want that!
+
+Copy the ```/quobyte/bmhenn-class-grp/ProblemSet2/Ethiopians_All_US_S_QC.* ``` plink dataset into your new directory.
+
+## Question 5 [2pts]
+
+How many chromosomes and SNPs are in this file?
+
+```
+(Type your answer here)
+```
+
+Now let’s create a new binary dataset with fewer correlated SNPs using the sorted dataset bfiles you just copied over. Let’s remove SNPs that have an r<sup>2</sup> (r-squared) of 0.5 or higher within a 50 kb window. --indep-pairwise takes 3 parameters, window-size, the number of variants by which the window slides down the chr and the cutoff for the degree of correlation (r<sup>2</sup>). Read Ch. 9.3 for more information.
+Run below on the dataset we just copied over.
+
+```
+plink --bfile Ethiopians_All_US_S_QC --indep-pairwise 50 40 0.5 --out EthiopiansAll_LD050
+```
+```
+plink --bfile Ethiopians_All_US_S_QC --extract EthiopiansAll_LD050.prune.in --make-bed --out EthiopiansAll_LDpruned050
+```
+
+## Question 6 [4 pts]
+
+How many SNPs are left in your LD-thinned dataset?
+
+```
+(Type your answer here)
+```
+
+Re-run PCA on this dataset using the plink PCA code from above. Add the PCA plot (PC1 vs PC2) into the space below via the same method as above. Is this any different from the PCA on just chr1? Why?
+
+Put your plotting code below to generate your image
+```{r, eval=TRUE, echo=TRUE}
+
+
+```
+```
+(Type your answer here)
+```
+
+## Task 2. Start a preliminary run of ADMIXTURE.
+
+You will be submitting a shell script to run `ADMIXTURE` in the background while you work on other things. Shell scripts end in .sh suffix. It can take time for `ADMIXTURE` to run, especially for higher Ks. We’re going submit a script to run `ADMIXTURE` for K = 2,3,4,5 and 6 different ancestral clusters (i.e., at the end you’ll have run `ADMIXTURE` 5 times).
+
+
+The first step is to run admixture on your dataset of interest (i.e. your sorted, LD-pruned All Ethiopian dataset) using the example script below. The class will submit the script as a slurm job using:
+
+```
+sbatch yourscriptname.sh
+```
+Where you replace the script name with whatever yours is called.
+
+
+but first you need to make the script using nano.
+
+```
+nano "filename".sh
+```
+
+Copy the script below into this empty nano file you just made and named 
+
+```
+#!/bin/bash
+# options for sbatch
+#SBATCH --nodes=1 # should never be anything other than 1
+#SBATCH --ntasks=1 #number of cpus to use
+#SBATCH --time=24:00:00 # Acceptable time formats include "minutes", "minutes:seconds", "hours:minutes:seconds", "days-hours", "days-hours:minutes" and "days-hours:minutes:seconds".
+#SBATCH --mem=30G # Memory pool for all cores (see also --mem-per-cpu). Default in Mb.
+#SBATCH --account=publicgrp # cluster account to use for the job
+#SBATCH --job-name=Admixture_Eth # Job name
+#SBATCH --error=Admixture_Eth.err
+#SBATCH --mail-type=ALL
+#SBATCH --partition=low
+
+#replace your email here!
+#SBATCH --mail-user= @ucdavis.edu
+
+module load admixture
+for K in 2 3 4 5 6
+do
+  /quobyte/bmhenn-class-grp/programs/admixture_linux-1.3.1/admixture -s 35 path/to/your/bed/file/EthiopiansAll_LDpruned050.bed $K | tee log${K}.out
+done
+```
+
+
+The output of admixture should be a .P and .Q file for every iteration of "K" that you selected, as well as the log files for every K iteration.
+
+Make sure you change the script to give your job a unique name and call the correct files. The `-s` flag simply specifies a random number to seed the program. You can change this random number if you want (right now it is 35). Remember to write in the correct path to your `.bed` plink file.
+
+Submit this job to the cluster. We’ll get back to plotting the output later. Check back in a few minutes to make sure that your job is running correctly and that the output files were produced for K=2. The whole thing could take 6-8 hours to finish. When it’s done, you should see your output files – a set of .P, .Q and log files.
+
+You can check the status of your job with
+```
+squeue -u <username>
+```
+
+## Task 3. Plot and Interpret ADMIXTURE:
+
+### 1. Running Pong to plot admixture runs
+
+Pong requires an input file with three **tab-delimited** columns:
+
+- Column 1: A unique run ID for each Q matrix (must begin with a letter, can include numbers and underscores)   
+- Column 2: The K value for the Q matrix  
+- Column 3: The file path to the Q matrix
+
+
+To begin, create this “filemap.txt” file in the same directory as your P and Q matrices using nano.
+
+IMPORTANT! Spaces in this file are tabs not space.
+
+Example filemap.txt:
+
+```
+k2  2 /quobyte/bmhenn-class-grp/students/YourName/EthiopiansAll_LDpruned050.2.Q
+k3  3 /quobyte/bmhenn-class-grp/students/YourName/EthiopiansAll_LDpruned050.3.Q
+k4  4 /quobyte/bmhenn-class-grp/students/YourName/EthiopiansAll_LDpruned050.4.Q
+k5  5 /quobyte/bmhenn-class-grp/students/YourName/EthiopiansAll_LDpruned050.5.Q
+k6  6 /quobyte/bmhenn-class-grp/students/YourName/EthiopiansAll_LDpruned050.6.Q
+```
+
+In order to have population labels on the plot, Pong also requires a file with a single column containing the population IDs for each individual in order. They refer to it as the “ind2_pop” file in the [manual](http://brown.edu/Research/Ramachandran_Lab/files/pong/pong-manual.pdf)
+
+This information can be found in the `Ethiopians_All_US_S_QC.fam` file, in the first column. You can use this bash command to extract the first column and save it in a new file.
+```
+cut -d " " -f1 Ethiopians_All_US_S_QC.fam > ind2_pop.txt
+```
+
+Pong works by opening up a connection to a localhost on a web browser in order to produce an interactive visualization. In order to run pong on the remote server, we need to set up port forwarding from your laptop’s port 4000 to the remote cluster’s port 4000.
+
+> Note: only one person at a time can be connecting via a given port number like 4000. So, you will be assigned your OWN number to connect to.
+
+Follow these steps below in order to set up port forwarding and run pong:
+
+1. Open up another terminal window, but do not connect to the server. Run the command below, replacing `4000` with the number you are assigned. On a mac, you can use command+T to open another terminal tab.
+    ```
+    ssh -N -L 4000:localhost:4000 "username"@hive.hpc.ucdavis.edu
+    ```
+    You will be prompted to put in your password. The command will then hang: This is normal. **Do not close the terminal window**, just let the command hang there.
+
+2. Return to your server terminal window
+
+3. Navigate to the directory containing your P and Q matrices, and the filemap.txt and mapfile you created. To run pong, simply use:
+```
+
+/quobyte/bmhenn-class-grp/programs/pong/main.py -m filemap.txt -i ind2_pop.txt --port YourAssignedNumber
+```
+
+
+4. You should see an output that looks like this (but it might take a second...do not panic!)
+
+```
+-------------------------------------------------------------------
+                            p o n g
+      by A. Behr, K. Liu, T. Devlin, G. Liu-Fang, and S. Ramachandran
+                       Version 1.4.7 (2016)
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+Parsing input and generating cluster network graph
+Matching clusters within each K and finding representative runs
+For K=5, there is 1 mode across 1 run.
+Matching clusters across K
+Finding best alignment for all runs within and across K
+match time: 0.00s
+align time: 0.00s
+total time: 0.03s
+```
+
+5. Open up your web browser of choice (Chrome, Safari etc) and type in http://localhost:4000 (subbing your assigned number for 4000)
+
+6. Pong should open up an interactive visualization in your web browser.
+
+7. When you are done, simply close the terminal tab where the port forwarding ssh command is hanging and the connection will close.
+
+
+## Question 7 [4 pts]
+
+ If you were to create a population structure plot using ADMIXTURE for k=3, which ancestral clusters would you expect to observe? How about at k=4? Write down your expectations. Please provide several sentences to support your choice.
+  > Hint: you may need to google the population names and do a little research on the groups. Feel free to discuss this with your classmates partners
+
+K = 3:
+ ```
+(Type your answer here)
+ ```
+K = 4
+ ```
+(Type your answer here)
+ ```
+
+## Question 8 [3 pts]
+
+ Save the image of your `ADMIXTURE` plots for K=2 through K=6 and upload them with your homework document/answers. Interpret each plot, describing how the changes you observe as you increase K. If you don’t already know, you should research the geographic locations of all the populations you plotted.
+
+```
+(Type your answer here. Don't forget to turn in your plots too! Please list the name of the file for these plots.)
+```
+
+
+## Question 9 [2 pts]
+
+ Take a look at K=6. You should see that some individuals no longer look ‘admixed’, but instead have their own unique color that they share with a few other individuals in their population. Why do you think you see these unique clusters? Explain
+
+ ```
+(Type your answer here)
+ ```
+
+## Question 10 [2pts]
+
+ Look at the K=2 output files from `ADMIXTURE`. At the bottom of the log file, there will be an estimate of Fst between the two ancestral populations. What is this number? Is differentiation between the two ancestral populations very high, very low or moderate, in the context of humans?
+
+ ```
+(Type your answer here)
+ ```
+ 
+ 
+ 
+
+## Task 5. Compare PCA and ADMIXTURE
+
+  let's ask how PCA and ADMIXTURE are complementary. Navigate to /quobyte/bmhenn-class-grp/ProblemSet2 and copy the 1kg_EU_qc.bed, .bim, and .fam files into your student directory
+
+Then take a look at the 1kg_EU_qc.fam file.
+  
+## Question 11 [1pt]
+  Which populations are listed in this fam file?
+
+ ```
+(Type your answer here)
+ ```
+ 
+Now perform the LD thinning procedure as you did above, on this new 1kg_EU_qc dataset. Write the new dataset (HINT: "--make-bed --out") commands to your directory. Now run PCA for PCs 1-4 and ADMIXTURE K=4 on this LD-thinned dataset. Use scp as before and make your plots below.
+
+PC1 vs PC2
+```{r, eval=TRUE, echo=TRUE}
+
+
+```
+PC3 vs PC4
+```{r, eval=TRUE, echo=TRUE}
+
+
+```
+
+K = 4
+ ```
+(Type your answer here)
+ ```
+
+## Question 12 [4 pts]
+  Compare and contrast the PCA and the ADMIXTURE plots. How are they similar? different? Explain.
+
+ ```
+(Type your answer here)
+ ```
