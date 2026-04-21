@@ -75,3 +75,7 @@ Five homework assignments based on the course recorded lectures and the textbook
 | **Week 4: <br> May 26/28** | **Read and watch before class:** IBD, relatives, and ROH lecture<br><br>**In Class:** Problem set 3 | **Read and watch before class:**<br><br>**In Class:** Finish problem set 3 |
 | **Week 5: <br> June 2/4** | **Read and watch before class:** GWAS and LD lecture<br><br>**In Class:** Start problem set 4 | **Read and watch before class:** PRS and population stratification<br><br>**In Class:** Finish problem set 4 |
 
+
+**Lecture Recordings** <br>
+ Week 1: Intro to Human Genetics: https://ucdavis.zoom.us/rec/share/np4gzeFX3su6OiYS0hiZPp3Dcr_7woekG-YN7D35p8I7nFwLOUtLhjk4IRBEEgar.PwujNtNA4fBG-q9S?startTime=1776803572000
+
