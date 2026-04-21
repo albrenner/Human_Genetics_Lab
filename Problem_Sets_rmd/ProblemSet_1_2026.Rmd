@@ -37,16 +37,20 @@ A very useful online manual is available for PLINK here:
 #### Log on to the Genome Center cluster.
 
 ```         
-ssh yourUserName@augrabies.genomecenter.ucdavis.edu
+ssh yourUserName@hive.hpc.ucdavis.edu
 ```
 
 Then navigate to our ant157 student folder 
 
 ```
-cd /share/hennlab/CourseANT157L/Students
+cd /quobyte/bmhenn-class-grp/students/
 ```    
 
 Please create a directory with your own name. You will be working out of this space for the rest of the class.
+
+```
+mkdir YOURNAME
+``` 
 
 You will be using PLINK software. In order to use this, you need to load
 the software module:
@@ -63,7 +67,7 @@ session.
 
 Use `head` to explore the first line of the `Ethiopians_chr1.fam` file
 and the `Ethiopians_chr1.bim` file in the
-`/share/hennlab/CourseANT157L/data/Ethiopians` directory.
+`/quobyte/bmhenn-class-grp/ProblemSet1/data` directory.
 
 What is the population and individual ID of the first individual in the
 Ethiopians_chr1.fam file?
@@ -87,7 +91,7 @@ our data.
 Navigate back to your student directory, then call plink and run a command.
 
 ```         
-plink --bfile /share/hennlab/CourseANT157L/data/Ethiopians/Ethiopians_chr1 --freq
+plink --bfile /quobyte/bmhenn-class-grp/ProblemSet1/data/Ethiopians_chr1 --freq
 ```
 
 The `--bfile` argument informs PLINK what dataset to look for, in this
@@ -384,7 +388,7 @@ your work
 ### Question 17 [2pts]
 
 Check out rs12075 in the dbSNP online database:
-<http://www.ncbi.nlm.nih.gov/projects/SNP/>
+<http://www.ncbi.nlm.nih.gov/SNP/>
 
 What gene does this SNP lie in? Focusing on the HapMap populations, is
 there anything interesting about the geographic distribution of this SNP
