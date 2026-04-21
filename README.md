@@ -77,5 +77,8 @@ Five homework assignments based on the course recorded lectures and the textbook
 
 
 **Lecture Recordings** <br>
- Week 1: Intro to Human Genetics: https://ucdavis.zoom.us/rec/share/np4gzeFX3su6OiYS0hiZPp3Dcr_7woekG-YN7D35p8I7nFwLOUtLhjk4IRBEEgar.PwujNtNA4fBG-q9S?startTime=1776803572000
+ Week 1: Intro to Human Genetics: https://ucdavis.zoom.us/rec/share/np4gzeFX3su6OiYS0hiZPp3Dcr_7woekG-YN7D35p8I7nFwLOUtLhjk4IRBEEgar.PwujNtNA4fBG-q9S?startTime=1776803572000  <br><br>
+ 
+ Week 2: Admixture and PCA: https://ucdavis.zoom.us/rec/share/xV9tXWRJXcnKnIIF3jN5fFabwm78KuBjrppUwVU3f7zy645bWccsjL_lm_megEsJ.wnVoy33ubpPwX8aP
+
 
