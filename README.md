@@ -1,6 +1,8 @@
 # Human_Genetics_Lab
 This is the course page for the human genetics lab course. Here you will find the syllabus, problem sets, helpful resources, and tutorial presentations.
 
+**Knowledge survey**
+https://forms.gle/AbhufHKLf5w9pxwP7
 
 **Course:** D43, Human Genetics Lab
 
