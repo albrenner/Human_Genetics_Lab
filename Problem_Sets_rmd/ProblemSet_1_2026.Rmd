@@ -56,7 +56,7 @@ You will be using PLINK software. In order to use this, you need to load
 the software module:
 
 ```         
-module load plink/1.90p
+module load plink
 ```
 
 The command module load will load different types of software installed

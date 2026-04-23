@@ -37,7 +37,7 @@ Navigate to the ProblemSet2 directory and copy the Ethiopians_chr1_updated_sex.b
 We will begin by loading plink to run a PCA.
 
 ```         
-module load plink/1.90p
+module load plink
 ```
 
 Now you need to get the Ethiopians_Chr1_updated_sex.bed, .bim and .fam files filtered and ready for the PCA analysis.
@@ -66,7 +66,7 @@ Look at the .eigenvec file. Describe the file contents. What is contained in the
 Now we will plot the PCA. Open a new terminal window (you can do this with Command+T the same way you would open a new window on the internet). DON’T login. Instead use pwd to see where you are on your local computer; this is your current working directory. In order to move a file from a remote host to your local host (your computer) we can use the ```scp``` command. NOTE this is all in one command line. Fill in the login and file names with yours. Recall that “.” means your current working directory on your computer, just like you practiced in week 1 (you can change this if you want to download things elsewhere).
 
 ```
-scp "loginName"@hive.hpc.ucdavis.edu:/quobyte/bmhenn-class-grp/students/abrenner/"YourStudentDirectoryName"/EthiopianChr1_pcs4.eigenvec .
+scp "loginName"@hive.hpc.ucdavis.edu:/quobyte/bmhenn-class-grp/students/"YourStudentDirectoryName"/EthiopianChr1_pcs4.eigenvec .
 ```
 
 Open R. In R console, set your working directory to where you downloaded the file.
@@ -208,8 +208,8 @@ Copy the script below into this empty nano file you just made and named
 #SBATCH --mail-type=ALL
 #SBATCH --partition=low
 
-#replace your email here!
-#SBATCH --mail-user= @ucdavis.edu
+#replace your email here!(no spacce inbetween the equal sign and your email)
+#SBATCH --mail-user=@ucdavis.edu
 
 
 for K in 2 3 4 5 6
