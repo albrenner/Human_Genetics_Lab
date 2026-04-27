@@ -77,7 +77,8 @@ Five homework assignments based on the course recorded lectures and the textbook
 
 
 **Lecture Recordings** <br>
- Week 1: Intro to Human Genetics: https://ucdavis.zoom.us/rec/share/np4gzeFX3su6OiYS0hiZPp3Dcr_7woekG-YN7D35p8I7nFwLOUtLhjk4IRBEEgar.PwujNtNA4fBG-q9S?startTime=1776803572000  <br><br>
+ Week 1: Intro to Human Genetics: https://ucdavis.zoom.us/rec/share/np4gzeFX3su6OiYS0hiZPp3Dcr_7woekG-YN7D35p8I7nFwLOUtLhjk4IRBEEgar.PwujNtNA4fBG-q9S?startTime=1776803572000  <br>
+ Plink Heterozygosity, and Hardy Weinberg: https://ucdavis.zoom.us/rec/share/3f6KVe47SdhlcExMuapB4mfaWh4jrPfDaQZT0Vu1DJbH6NTs1SgI4hE_N758TrhQ.Ab8tOM7ggGCcdeLh  <br><br>
  
  Week 2: Admixture and PCA: https://ucdavis.zoom.us/rec/share/xV9tXWRJXcnKnIIF3jN5fFabwm78KuBjrppUwVU3f7zy645bWccsjL_lm_megEsJ.wnVoy33ubpPwX8aP <br><br>
 
