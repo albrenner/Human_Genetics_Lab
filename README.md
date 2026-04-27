@@ -79,6 +79,10 @@ Five homework assignments based on the course recorded lectures and the textbook
 **Lecture Recordings** <br>
  Week 1: Intro to Human Genetics: https://ucdavis.zoom.us/rec/share/np4gzeFX3su6OiYS0hiZPp3Dcr_7woekG-YN7D35p8I7nFwLOUtLhjk4IRBEEgar.PwujNtNA4fBG-q9S?startTime=1776803572000  <br><br>
  
- Week 2: Admixture and PCA: https://ucdavis.zoom.us/rec/share/xV9tXWRJXcnKnIIF3jN5fFabwm78KuBjrppUwVU3f7zy645bWccsjL_lm_megEsJ.wnVoy33ubpPwX8aP
+ Week 2: Admixture and PCA: https://ucdavis.zoom.us/rec/share/xV9tXWRJXcnKnIIF3jN5fFabwm78KuBjrppUwVU3f7zy645bWccsjL_lm_megEsJ.wnVoy33ubpPwX8aP <br><br>
+
+ Week 3: Visualizing admixture, inbreeding, and relatedness: https://ucdavis.zoom.us/rec/share/mvHd4JY-Q23leK3unM3HJd7I9Vsiw0skboYFlxY6FvWMytyi4ops8E9p-erG9uax.B9AUHy7wiKUZbwTV <br><br>
+
+ Week 4: IBD, relatives, and ROH: https://ucdavis.zoom.us/rec/share/RRVz_Pq53x-AMLmsyLIEiARYyrbtn0rpVoLletcxCex9BXlHwLvGiSjJQOmO_e8U.Q4gjDEmjWKk6YL4x
 
 
