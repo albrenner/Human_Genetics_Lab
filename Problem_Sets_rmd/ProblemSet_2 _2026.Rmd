@@ -11,20 +11,7 @@ Name:
 Write your name here
 ```
 
-**Due Date:  Friday May 1, 11:59pm**
-
-
-
-
-
-**REALLY IMPORTANT NEW STEP**
-Now that we are on hive you need to do this before you run any commands. Do this as soon as you sign in!!!!!!!!!!
-
-```
-srun --account=publicgrp --partition=low --mem=4G --time=2:00:00 --pty /bin/bash -il
-```
-
-
+**Due Date**
 
 
 ### Goals:
@@ -32,7 +19,19 @@ This exercise is meant to give you tools for visualizing population structure in
 
 ## Task 1. Plot and Interpret PCA:
 
-Navigate to the ProblemSet2 directory and copy the Ethiopians_chr1_updated_sex.bed, .bim, and .fam files into your peronal student directory. These new files for this dataset are the same from last week but have the sex updated so all indivuals are labled.
+
+
+
+**REALLY IMPORTANT STEP**
+You need to do this before you run any commands. Do this as soon as you sign in!
+
+```
+srun --account=publicgrp --partition=low --mem=4G --time=2:00:00 --pty /bin/bash -il
+```
+
+
+
+Navigate to the ProblemSet2 directory and copy the Ethiopians_chr1_updated_sex.bed, .bim, and .fam files into your personal student directory. These new files for this dataset are the same from last week but have the sex updated so all individuals are labeled.
 
 We will begin by loading plink to run a PCA.
 
@@ -66,13 +65,13 @@ Look at the .eigenvec file. Describe the file contents. What is contained in the
 Now we will plot the PCA. Open a new terminal window (you can do this with Command+T the same way you would open a new window on the internet). DON’T login. Instead use pwd to see where you are on your local computer; this is your current working directory. In order to move a file from a remote host to your local host (your computer) we can use the ```scp``` command. NOTE this is all in one command line. Fill in the login and file names with yours. Recall that “.” means your current working directory on your computer, just like you practiced in week 1 (you can change this if you want to download things elsewhere).
 
 ```
-scp "loginName"@hive.hpc.ucdavis.edu:/quobyte/bmhenn-class-grp/students/"YourStudentDirectoryName"/EthiopianChr1_pcs4.eigenvec .
+scp "loginName"@hive.hpc.ucdavis.edu:/quobyte/bmhenn-class-grp/students/YourStudentDirectoryName/EthiopianChr1_pcs4.eigenvec .
 ```
 
 Open R. In R console, set your working directory to where you downloaded the file.
 
 ```
-setwd("[path_to_my_files]/")
+setwd("~/path_to_my_files")
 ```
 Then we will install a package called ggplot to visualize the data
 > NOTE: You only need to do this if you don't already have the ggplot2 package. If you already have it, you can skip to the library() command
@@ -95,7 +94,7 @@ ggplot(data, aes(x=pc1,y=pc2, color=population))+geom_point()+ xlab("PC1")+ ylab
 ## Question 2 [4 pts]
 
 Add your plots of PC1 vs PC2, and PC3 vs PC4 below. This can be done by pasting your R plotting code in the section below that specifies eval=TRUE. The eval=TRUE specification will tell R to run the code (to generate the plot) when you knit the file, and the echo=TRUE will specify that your code will be shown in addition to being evaluated/run in the knitted file. However, You can run the code to visualize your plot before you knit the final file.
-> Note: Your evaluated code below will need to include your setwd("[path_to_files]/") and library(ggplot2) in order to evaluate 
+> Note: Your evaluated code below will need to include your setwd("~/path_to_my_files") and library(ggplot2) in order to evaluate 
 
 Generate your PCA plots in R below
 
@@ -208,7 +207,7 @@ Copy the script below into this empty nano file you just made and named
 #SBATCH --mail-type=ALL
 #SBATCH --partition=low
 
-#replace your email here!(no spacce inbetween the equal sign and your email)
+#replace your email here! (no space between equal sign and email)
 #SBATCH --mail-user=@ucdavis.edu
 
 
@@ -270,13 +269,13 @@ Follow these steps below in order to set up port forwarding and run pong:
 
 1. Open up another terminal window, but do not connect to the server. Run the command below, replacing `4000` with the number you are assigned. On a mac, you can use command+T to open another terminal tab.
     ```
-    ssh -N -L 4000:localhost:4000 "username"@hive.hpc.ucdavis.edu
+    ssh -N -L 4000:localhost:4000 username@hive.hpc.ucdavis.edu
     ```
     You will be prompted to put in your password. The command will then hang: This is normal. **Do not close the terminal window**, just let the command hang there.
 
 2. Return to your server terminal window
 
-3. Navigate to the directory containing your P and Q matrices, and the filemap.txt and mapfile you created. To run pong, simply use:
+3. Navigate to the directory containing your P and Q matrices, and the filemap.txt and mapfile you created. To run pong, use:
 ```
 
 /quobyte/bmhenn-class-grp/programs/pong/main.py -m filemap.txt -i ind2_pop.txt --port YourAssignedNumber
