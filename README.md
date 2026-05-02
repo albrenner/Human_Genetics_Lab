@@ -61,7 +61,7 @@ The textbook chapters are available as PDFs in this GitHub repository
 
 **Assignments and Tests:**
 
-Five homework assignments based on the course recorded lectures and the textbook will be assigned.
+ Four Problem sets based on the course recorded lectures and the textbook will be assigned.
 
 
 
