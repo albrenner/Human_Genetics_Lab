@@ -40,6 +40,14 @@ A very useful online manual is available for PLINK here:
 ssh yourUserName@hive.hpc.ucdavis.edu
 ```
 
+
+**REALLY IMPORTANT STEP**
+You need to do this before you run any commands. Do this as soon as you sign in!!!!!!!!!!
+
+```
+srun --account=publicgrp --partition=low --mem=4G --time=2:00:00 --pty /bin/bash -il
+```
+
 Then navigate to our ant157 student folder 
 
 ```
