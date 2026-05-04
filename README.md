@@ -84,6 +84,7 @@ The textbook chapters are available as PDFs in this GitHub repository
 
  Week 3: Visualizing admixture, inbreeding, and relatedness: https://ucdavis.zoom.us/rec/share/mvHd4JY-Q23leK3unM3HJd7I9Vsiw0skboYFlxY6FvWMytyi4ops8E9p-erG9uax.B9AUHy7wiKUZbwTV <br><br>
 
- Week 4: IBD, relatives, and ROH: https://ucdavis.zoom.us/rec/share/RRVz_Pq53x-AMLmsyLIEiARYyrbtn0rpVoLletcxCex9BXlHwLvGiSjJQOmO_e8U.Q4gjDEmjWKk6YL4x
-
+ Week 4: IBD, relatives, and ROH: https://ucdavis.zoom.us/rec/share/RRVz_Pq53x-AMLmsyLIEiARYyrbtn0rpVoLletcxCex9BXlHwLvGiSjJQOmO_e8U.Q4gjDEmjWKk6YL4x <br><br>
+ 
+ Week 5: https://ucdavis.zoom.us/rec/share/XkGEY6S9PJylqr4boE1xLGo5O8n6i0HgjaRiwNBaO2-FiDctYRdz87fWeIe3oQcf.295DkSuaDkyLjDds?startTime=1777913982000
 
