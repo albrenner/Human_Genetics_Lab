@@ -1,0 +1,279 @@
+## ANT157L Problem Set 4: IBD and Runs of Homozygosity (ROH)
+
+Name:
+```
+Write your name here
+```
+
+**Due Date**
+
+
+### Goals:
+
+We have read about how the proportion of the genome in runs of homozygosity (ROH) is a proxy for inbreeding within an individual (i.e. inbreeding coefficient, f). We have also read about how, for quantitative traits with a recessive effect, individuals that have higher homozygosity, i.e. are more inbred, can differ in their phenotype from individuals with smaller fs. We will test for a correlation between inbreeding and height in African populations (similar to McQuillan et al. 2012) by calculating the cROH for each individual.
+
+## Task 1: Plot and Interpret ROH in different Populations:
+
+
+**REALLY IMPORTANT STEP**
+Now that we are on hive you need to do this before you run any commands. Do this as soon as you sign in!!!!!!!!!!
+
+```
+srun --account=publicgrp --partition=low --mem=4G --time=2:00:00 --pty /bin/bash -il
+```
+
+
+Note: First copy the ProblemSet3 directory into yout student folder. We will be using the Ethiopians_All_US_S_QC files.
+
+Begin by reading the plink manual on ROHs or check out the lecture on ROH. https://www.cog-genomics.org/plink/1.9/ibd 
+
+Then navagate to the ProblemSet3 directory in your student folder (the one you just copied over) and try out the command line below and give your output file a name.
+
+
+```
+module load plink
+```
+```
+plink --bfile Ethiopians_All_US_S_QC --homozyg --homozyg-snp 50 --homozyg-window-missing 2 --homozyg-window-het 1 --homozyg-kb 1000 --out Ethiopians_All_US_S_QC_ROH
+```
+
+Move the `.hom.indiv` file you created to your local computer using scp. (Check a previous assignment if you’ve forgotten how to use scp). Use `R `on your local machine and read in this file. You need to replace your file name where it says "FileName":
+
+```{r}
+setwd("[path to folder where file is stored]")
+data<-read.table("FileName", header=TRUE)
+```
+
+Now we will examine the ROH file (the object you just named data) in greater detail. Type the following command in R to view the first 10 lines.
+
+```{r}
+head(data, 10)
+```
+The NSEG column lists the number of ROH segments for each individual. The KB column lists the total length of the genome in ROH in kilobases (i.e. this is cROH or cumulative ROH). Finally, the KBAVG lists the average length of an ROH segment for an individual.
+
+### Question 1 [1 pt]
+
+What is the relationship between the number of segments in ROH and the cumulative total of ROH in an individual’s genome (i.e. how do you get the value in the KBAVG column from NSEG and KB values)?
+
+```
+(Type your answer here)
+```
+
+Use the R commands below to plot the relationship between cROH and the number of segments and describe. The lm function is used below to fit a linear model to the data. The `cor` function calculates the Pearson correlation coefficient between x and y. You can type `help()` or `?` for information on the usage of these functions.
+
+You need to replace your file name where it says "FileName"
+
+```{r, eval=TRUE, echo=TRUE}
+data<-read.table("FileName", header=TRUE)
+plot(data$NSEG, data$KB, axes=TRUE, ylab="cROH (Kb)",
+xlab= "Number of ROH segments", xlim=c(0,60))
+regressLine<-lm(data$KB ~ data$NSEG)
+corCoeff<-cor(data$NSEG, data$KB)
+abline(regressLine, lty=2, col="red")
+legend(5,250000,paste("correlation = ", round(corCoeff, 3)),  box.col="white")
+```
+
+### Question 2 [2 pts]
+
+What is the correlation coefficient between segment number and cROH? 
+Your plot should render above when you knit your file (make sure it is there before turning in your problem set).
+
+```
+(Type your answer here)
+```
+
+Now examine the distribution of cROH by population using the R code below.
+You need to replace your file name where it says "FileName"
+
+```{r, eval=TRUE, echo=TRUE}
+data<-read.table("FileName", header=TRUE)
+hist(data[which(data$FID=="CHABU"),"KB"], breaks=seq(0,300000,10000), border="orange", ylim=c(0,20), xlim=c(0,300000), main="Distribution of cROH by pop", xlab="cROH (Kb)", axes=TRUE)
+hist(data[which(data$FID=="BENCH"),"KB"], breaks= seq(0,300000,10000), border="purple", add=TRUE, ylim=c(0,20), xlim=c(0,300000))
+hist(data[which(data$FID=="SHEKO"),"KB"], breaks= seq(0,300000,10000), border="red", add=TRUE, ylim=c(0,20), xlim=c(0,300000))
+points(rep(250000,3), c(19,16.5,14),pch=0,col=c("orange","purple","red"))
+text(260000,19,"Chabu",pos=4,cex=0.9)
+text(260000,16.5,"Bench",pos=4,cex=0.9)
+text(260000,14,"Sheko",pos=4,cex=0.9)
+```
+
+### Question 3 [4 pts]
+
+a) Which population has the highest cROHs per individual? 
+b) Name two possible reasons that this population has higher cROH than the other populations. 
+c) Copy the plotting code above and in the R-code chunk below, modify the code used above to include the Shekkacho and Majang. (Make sure your plot is rendered when you knit your markdown file.)
+
+```
+(Type your answer here)
+
+```
+```{r, eval=TRUE, echo=TRUE}
+
+```
+
+## Task 2 : Testing parameters of ROH
+
+Go back to your terminal on hive. We will now test what happens when you change parameters for ROH size. Modify the plink code you used in the prior section to answer the questions below. Remember to provide unique output file names. Read the resulting files into R as before and look at the same columns. 
+Hint: You can use the functions `mean()` and `median()` to describe the results of different parameter sets.
+
+### Question 4.  [2 pts]
+
+What happens to mean/median cROH and segment number when you adjust the minimum ROH segment size to 500kb? 100kb? Explain why this is.
+
+```
+(Type your answer here)
+```
+
+### Question 5.  [2 pt]
+What happens to mean/median cROH and segment number when you set the minimum segment size back to 1000 kb, but you allow NO heterozygotes in a given ROH? Explain.
+
+```
+(Type your answer here)
+```
+
+### Question 6.  [2 pts]
+
+Which set of parameters do you think is best? Include the command you used and justify your choice.
+
+```
+(Type your answer here)
+```
+
+
+### Question 7. [3 pts]
+
+What is the correlation between cROH and plink’s estimate of inbreeding? Use the `--ibc` flag and Fhat2 column from the output.
+https://www.cog-genomics.org/plink/1.9/basic_stats#ibc 
+
+> Hint: Make a plot and use the correlation coefficient function in R as shown earlier in this problem set
+
+```{r, eval=TRUE, echo=TRUE}
+
+```
+```
+(Type your answer here)
+```
+
+
+## Task 3. Testing the correlation between height and cROH
+
+Inspect the third column in the `Chabu_height.txt` file in your ProblemSet3 directory. This column contains the height, in centimeters, for all individuals in your dataset. You will update your Chabu population with this phenotypic data. 
+
+Select only the Chabu populations in your Ethiopians_All_US_S_QC using grep or awk and write it to a new plink binary file using --keep (look at problem set 1 if you do not remeber how to do this). 
+
+Update the new file with the `--pheno Chabu_height.txt` command. 
+
+Generate an ROH dataset for just the Chabu as well, using a minimum of 1000 kb, 2 heterozygotes, and 2 missing per segment (the snp option can remain at 50).
+
+### Question 8 [1 pt]
+
+Use scp to bring bring the Chabu_height.txt file to your local and Plot the distribution of height using a histogram in the R-code chunk below. Is height in the Chabu normally distributed? (You can answer this by the look of the distribution and do not need to verify statistically, but if you want, the shapiro.test() function will tell you if your distribution is significantly different (p-value) from a normal distribution).
+
+```{r, eval=TRUE, echo=TRUE}
+
+```
+```
+(Type your answer here)
+```
+
+
+### Question 9 [2 pt]
+
+Plot the relationship between cROH and height for the Chabu individuals using the .hom.indiv file for only the Chabu you created above and the plot() function in R. 
+Fit a regression line through the plot and calculate the correlation coefficient as before.
+
+Is height correlated with cROH in Chabu populations? Discuss (compare and contrast) your results with respect to McQuillan et al (2012) [from lecture and available on the Github] and include your plot.
+
+
+```{r, eval=TRUE, echo=TRUE}
+
+```
+```
+(Type your answer here)
+```
+
+
+## Task 4 Visualizing IBD Segment Sharing:
+
+First, infer IBD between Chabu individuals (generate the `king.seg` and `king.segments.gz` files) using the `--ibdseg` flag.
+
+
+
+NOTE: You will need to modify the king command to include the name of your student folder, your file nam filename and `--prefix` flag if you named your Chabu-only bfiles something different or are working out of a folder that is not named ProblemSet3.
+
+```
+/quobyte/bmhenn-class-grp/programs/king -b YOUR_CHABU_FILE_WITH_HEIGHT_DATA.bed --ibdseg --cpus 2 --prefix Chabu
+```
+
+Next, generate the plots with the R script. The arguments are the prefix of the `king.segments.gz` and `.seg` files (same as what you specified `--prefix` in the first king command) and the plot type, which is `ibdseg`. We will be activating an `R-env` conda environment.
+
+```
+module load conda
+conda create -n R_env r-base=4.3 r-ggplot2
+conda activate R_env
+Rscript /quobyte/bmhenn-class-grp/scripts/king_segments_plot.R Chabu ibdseg
+```
+
+> NOTE: This might take a second. Don’t freak out if your prompt doesn’t reappear right away like it usually does.
+
+The output is a gzipped folder containing many plots. You can unzip it using:
+```
+tar -xf Chabu_ibdseg_rplots.tar.gz
+```
+
+`cd` into the `Chabu_ibdseg_rplots` directory. You should see two more directories: `2nd_relatives `(i.e. 2nd degree relatives) and `FS_relatives` (i.e. full sibling pairs)
+
+### Question 10 [2 pts]
+
+How many plots are there for FS pairs and 2nd degree relative pairs, respectively?
+
+```
+(Type your answer here)
+```
+
+Use scp to transfer the .png files showing the IBD sharing visualization between the following pairs of individuals:
+1.	S08 and S11 (in FS_relatives)
+2.	S08 and S60 (in FS_relatives)
+3.	S12 and S60 (in 2nd_relatives)
+
+
+### Question 11 [4 pts]
+
+Look at one of your plots. What do the white, red, and blue portions represent AND what does each mean? (i.e. don’t just give me a figure key, tell me what it means if two individuals are IBD1 at a locus, etc.). Explain the difference between individuals sharing IBD2 and ROH.
+
+```
+(Type your answer here)
+```
+
+### Question 12 [2 pts]
+
+Look at Chabu_IBDSeg_S08_S11.png & Chabu_IBDSeg_S08_S60.png. What is the relationship between these three individuals (S08, S11, and S60)? Compare and contrast IBD sharing between S08 & S11 with S08 & S60, for example you can look out the IBD specifically on chromosomes 12 and 17.
+
+ ```
+ (Type your answer here)
+ ```
+
+### Question 13 [2 pts]
+
+Now look at Chabu_IBDSeg_S08_S60.png & Chabu_IBDseg_S12_S60.png. What type of relationship is being visualized in each plot? Compare and contrast the two plots.
+
+```
+(Type your answer here)
+```
+
+### Question 14 [1 pt]
+
+Please submit your 3 IBDseg plots with your homework on canvas.
+
+### Question 15 [4 pts]
+
+Identify the Chabu individual with the highest cROH and convert this number into the fROH (i.e. F"IT" estimator) estimate of the total reduction in heterozygosity in this individual. 
+
+Assume that the Chabu have an effective population size of 500 beginning 20 generations ago to calculate the reduction in heterozygosity due to population structure (Hs/Htotal). Remember, F"ST" = 1 - (Hs/Htotal).
+
+Use the relationship between F"IS", F"IT", and F"ST" we went over in lecture on monday to solve for the F"IS" local inbreeding estimate in this Chabu individual, using the equations from class. Is the fROH primarily due to genetic drift or recent familial inbreeding? Show your work. 
+
+Explain the differences between F"IS", F"IT", and F"ST". 
+
+```
+(Type your answer here)
+```
