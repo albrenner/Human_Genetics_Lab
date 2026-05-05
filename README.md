@@ -18,8 +18,6 @@ https://forms.gle/AbhufHKLf5w9pxwP7
 
 **Class Duration:** May 5th – June 4th
 
-**Office Hours**: TBD
-
 
 **Course Description:**  
 
