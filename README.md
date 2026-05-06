@@ -67,11 +67,11 @@ The textbook chapters are available as PDFs in this GitHub repository
 
 | Week | Tuesday | Thursday |
 |------|---------|----------|
-| **Week 1: <br> May 5/7** | **Read and watch before class:** Introduction to genetics lecture<br><br>**In Class:** Basic Unix tutorial, R Studio tutorial, Introduce problem set 1 | **Read and watch before class:** Plink Heterozygosity, and Hardy Weinberg lecture<br><br>**In Class:** Problem set 1 |
-| **Week 2: <br> May 12/14** | **Read and watch before class:** <br><br>**In Class:** Finish problem set 1 | **Read and watch before class:** Admixture and PCA lecture <br><br>**In Class:** Start Problem set 2 |
+| **Week 1: <br> May 5/7** | **Read and watch before class:** Introduction to genetics lecture<br> Textbook chapter 1 <br><br>**In Class:** Basic Unix tutorial, R Studio tutorial, Introduce problem set 1 | **Read and watch before class:** Plink Heterozygosity, and Hardy Weinberg lecture<br> Textbook chapter 3,7 <br><br>**In Class:** Problem set 1 |
+| **Week 2: <br> May 12/14** | **Read and watch before class:** Textbook chapter 7,8 <br><br>**In Class:** Finish problem set 1 | **Read and watch before class:** Admixture and PCA lecture <br><br>**In Class:** Start Problem set 2 |
 | **Week 3: <br> May 19/21** | **Read and watch before class:** Visualizing admixture, inbreeding, and relatedness lecture<br><br>**In Class:** Problem set 2 | **Read and watch before class:** <br><br>**In Class:** Finish problem set 2, Start problem set 3 |
-| **Week 4: <br> May 26/28** | **Read and watch before class:** IBD, relatives, and ROH lecture<br><br>**In Class:** Problem set 3 | **Read and watch before class:**<br><br>**In Class:** Finish problem set 3 |
-| **Week 5: <br> June 2/4** | **Read and watch before class:** GWAS and LD lecture<br><br>**In Class:** Start problem set 4 | **Read and watch before class:** PRS and population stratification<br><br>**In Class:** Finish problem set 4 |
+| **Week 4: <br> May 26/28** | **Read and watch before class:** IBD, relatives, and ROH lecture<br> Textbook chapter 9 <br><br>**In Class:** Problem set 3 | **Read and watch before class:**<br><br>**In Class:** Finish problem set 3 |
+| **Week 5: <br> June 2/4** | **Read and watch before class:** GWAS and LD lecture<br> Textbook chapter 2, 4 <br><br>**In Class:** Start problem set 4 | **Read and watch before class:** PRS and population stratification <br> Textbook chapter 5,10 <br><br>**In Class:** Finish problem set 4 |
 
 
 **Lecture Recordings** <br>
