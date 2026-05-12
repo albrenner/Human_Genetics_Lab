@@ -70,7 +70,7 @@ The textbook chapters are available as PDFs in this GitHub repository
 | **Week 1: <br> May 5/7** | **Read and watch before class:** Introduction to genetics lecture<br> Textbook chapter 1 <br><br>**In Class:** Basic Unix tutorial, R Studio tutorial, Introduce problem set 1 | **Read and watch before class:** Plink Heterozygosity, and Hardy Weinberg lecture<br> Textbook chapter 3,7 <br><br>**In Class:** Problem set 1 |
 | **Week 2: <br> May 12/14** | **Read and watch before class:** Textbook chapter 7,8 <br><br>**In Class:** Finish problem set 1 | **Read and watch before class:** Admixture and PCA lecture <br><br>**In Class:** Start Problem set 2 |
 | **Week 3: <br> May 19/21** | **Read and watch before class:** Visualizing admixture, inbreeding, and relatedness lecture<br><br>**In Class:** Oshiomah Oyageshio dissertation defense presentation "The Immunogenetics of TB Susceptibility" https://ucdavis.zoom.us/j/95698549247 | **Read and watch before class:** <br><br>**In Class:** Finish problem set 2 |
-| **Week 4: <br> May 26/28** | **Read and watch before class:** IBD, relatives, and ROH lecture<br> Textbook chapter 9 <br><br>**In Class:** Gillian dissertation defense presentation "evisiting epigenetic aging, MHC-based mate choice, and epistasis through the lens of African genomic diversity" | **Read and watch before class:**<br><br>**In Class:** Start Problem Set 3 |
+| **Week 4: <br> May 26/28** | **Read and watch before class:** IBD, relatives, and ROH lecture<br> Textbook chapter 9 <br><br>**In Class:** Gillian dissertation defense presentation "evisiting epigenetic aging, MHC-based mate choice, and epistasis through the lens of African genomic diversity" https://ucdavis.zoom.us/j/95698549247 | **Read and watch before class:**<br><br>**In Class:** Start Problem Set 3 |
 | **Week 5: <br> June 2/4** | **Read and watch before class:** GWAS and LD lecture<br> Textbook chapter 2, 4 <br><br>**In Class:** Finish problem set 3 | **Read and watch before class:** PRS and population stratification <br> Textbook chapter 5,10 <br><br>**In Class:** Together do Problem set 4 |
 
 
@@ -84,5 +84,7 @@ The textbook chapters are available as PDFs in this GitHub repository
 
  Week 4: IBD, relatives, and ROH: https://ucdavis.zoom.us/rec/share/RRVz_Pq53x-AMLmsyLIEiARYyrbtn0rpVoLletcxCex9BXlHwLvGiSjJQOmO_e8U.Q4gjDEmjWKk6YL4x <br><br>
  
- Week 5: https://ucdavis.zoom.us/rec/share/XkGEY6S9PJylqr4boE1xLGo5O8n6i0HgjaRiwNBaO2-FiDctYRdz87fWeIe3oQcf.295DkSuaDkyLjDds?startTime=1777913982000
+ Week 5: GWAS and LD lecture https://ucdavis.zoom.us/rec/share/XkGEY6S9PJylqr4boE1xLGo5O8n6i0HgjaRiwNBaO2-FiDctYRdz87fWeIe3oQcf.295DkSuaDkyLjDds?startTime=1777913982000<br>
+PRS and population stratification https://ucdavis.zoom.us/rec/share/MzK8xgEkgQBw1mcIni9EFkeFzqxskNxlNOrbdxNAgEx8e3dm6ZdU5mXn9TtmIh7H.nMYgz-DpwnxaIXM8?startTime=1778518875000
+ 
 
